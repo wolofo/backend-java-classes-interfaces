@@ -1,22 +1,22 @@
 public class Customer {
 
-		public Customer(String name, String lastName, CreditCard creditCard) {
-				this(name,  lastName, (int)(Math.random() * 100), creditCard);
+		public Customer(String name, String lastName, CreditCard creditCard, ContactInfo contactInfo) {
+				this(name,  lastName, (int)(Math.random() * 100), creditCard, contactInfo);
 		}
 
-		public Customer(String name,  String lastName, int customerNumber, CreditCard creditCard) {
+		public Customer(String name,  String lastName, int customerNumber, CreditCard creditCard, ContactInfo contactInfo) {
 				this.name = name;
 				this.customerNumber = customerNumber;
 				this.lastName = lastName;
 				this.creditCard = creditCard;
+				this.contactInfo = contactInfo;
 		}
 
 		private String name;
-
 		private int customerNumber;
 		private String lastName;
-
 		private CreditCard creditCard;
+		private ContactInfo contactInfo;
 
 		public String getName(){
 				return name;
@@ -46,11 +46,22 @@ public class Customer {
 				return creditCard;
 		}
 
-		public void setCreditCard(CreditCard creditCard) {
+	public ContactInfo getContactInfo() {
+		return contactInfo;
+	}
+
+	public void setContactInfo(ContactInfo contactInfo) {
+		this.contactInfo = contactInfo;
+	}
+
+	public void setCreditCard(CreditCard creditCard) {
 				this.creditCard = creditCard;
 		}
 
 		public void printName(){
 				System.out.println("Customer " + name);
 		}
+
+
+
 }
